@@ -29,6 +29,7 @@ app.listen(3000, () => {
   console.log('Started on port 3000');
 });
 
+module.exports = {app}; // ES6 syntax
 
 // No need to record a field that tracks when the task was started since
 // it is available within the _id fiels which is added automatically to the
