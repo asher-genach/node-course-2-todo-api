@@ -25,6 +25,14 @@ app.post('/todos', (req, res) => {
   });
 });
 
+app.get('/todos', (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos}); // ES6 sending an object that include the array, this way if we need to add additional data we could do it.
+  }, (e) => {
+    res.status(400).send(e); // 400 - Bad request.
+  });
+});
+
 app.listen(3000, () => {
   console.log('Started on port 3000');
 });
